@@ -1,13 +1,13 @@
 import express from "express";
-import userRouter from "./src/routers/user.router.js";
 import cors from "cors";
+import studentRouter from "./src/routers/getAllStu.router.js";
 const app = express();
 app.use(
   cors({
-    origin: ["https://jsbackend-g4za.onrender.com", "http://localhost:5173"],
+    origin: ["http://localhost:5173"],
   })
 );
 app.use(express.json());
 
-app.use("/api/v1", userRouter);
+app.use("/api/v1", studentRouter);
 export default app;
